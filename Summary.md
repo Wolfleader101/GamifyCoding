@@ -1,11 +1,4 @@
-# GamifyCoding
-A fun way to get you motivated to code.
-
-## Contents
-* [TODO](TODO.md)
-* [Summary](Summary.md) Also below
-
-### Summary so i can remember the idea
+# Summary so i can remember the idea
 
 Basically a fun way to get you motivated to code. i heard about gamification. basically it means that you make everything you do IRL like an RPG game with quests. Set everything as a challenge and complete it and receive a reward depending on the task. It is self moderated so you need self control so you don't abuse the system. The same way games get you hooked on enjoyment with the chemicals in your body called Dopamine and Serotonin this can too! These chemical are responsible for the sense of reward, feeling good, wellbeing and most of all happiness
 
@@ -22,4 +15,3 @@ After a certain amount of time you earn a certain amount of xp which counts towa
 * level 0 multiplier = 0%;
 * level 1 multiplier = 0.05%
 * level 2 multiplier = 0.1%
-

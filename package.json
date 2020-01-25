@@ -1,7 +1,7 @@
 {
   "name": "gamifycoding",
   "version": "1.0.0",
-  "description": "A fun way to get you coding instead of doing other things.",
+  "description": "A fun way to get you motivated to code",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
