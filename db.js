@@ -9,9 +9,8 @@ module.exports = {
                 XP: 0,
                 Level: 0,
             }
-            console.log(db);
             fs.writeFile(DbPath, JSON.stringify(db), (err) => {
-                console.log(err)
+               // console.log(err)
             });
             
             

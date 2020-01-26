@@ -6,10 +6,6 @@ $.ajax({
     data: {
         user: User
     },
-    // success: () => {
-    //     console.log(User);
-        
-    // }
 })
 
 
