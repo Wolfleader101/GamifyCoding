@@ -1,6 +1,6 @@
 # Unordered Checklist of things TODO
 
-* Make stopwach
+* Make stopwatch
 * Level Systems
 * Level up after certain amount of time of coding
 * Make stopwatch look good
