@@ -1,4 +1,8 @@
 /* https://github.com/JamieMcGibbon/TechnicalCafe thank you for the timer*/
+
+// XP System
+xp = 0;
+
 //Define vars to hold time values
 let seconds = 0;
 let minutes = 0;
@@ -20,6 +24,13 @@ function stopWatch(){
 
     seconds++;
 
+    //XP Logic
+
+    if (Number.isInteger(seconds / 15)) {
+        xp++;
+        console.log(xp);
+    }
+    
     //Logic to determine when to increment next value
     if(seconds / 60 === 1){
         seconds = 0;
