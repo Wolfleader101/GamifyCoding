@@ -27,6 +27,7 @@ function stopWatch(){
     //XP Logic
 
     if (Number.isInteger(seconds / 15)) {
+        // remove xp from front-end to stop xp spoofing and to stop xp resetting when you first launch
         xp++;
         $.ajax({
             type: 'POST',
