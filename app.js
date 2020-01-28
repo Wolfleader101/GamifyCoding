@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = 3402;
-const { database } = require('./db');
+const { AddUser, AddXP } = require('./db');
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
@@ -17,8 +17,15 @@ app.get('/db', (req, res) => {
 
 app.post('/db',(req, res) => {
     User = req.body.user;
-    database(User);
+    AddUser(User);
     res.sendStatus(200);
 });
+
+app.post('/xp', (req, res) => {
+    User = req.body.user;
+    XP = req.body.xp;
+    AddXP(User, XP)
+    res.sendStatus(200);
+})
 
 console.log(`Server up and ready!\nServer on port ${port}`);

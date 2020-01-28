@@ -1,4 +1,4 @@
-/* https://github.com/JamieMcGibbon/TechnicalCafe thank you for the timer*/
+/* https://github.com/JamieMcGibbon/TechnicalCafe thank you for the timer */
 
 // XP System
 xp = 0;
@@ -28,7 +28,16 @@ function stopWatch(){
 
     if (Number.isInteger(seconds / 15)) {
         xp++;
-        console.log(xp);
+        $.ajax({
+            type: 'POST',
+            url: '/xp',
+            data: {
+                user: User,
+                xp: xp
+            }
+        })
+
+        
     }
     
     //Logic to determine when to increment next value
