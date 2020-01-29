@@ -11,13 +11,16 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/src/index.html')
 app.use(express.static(path.join(__dirname, 'src')));
 app.listen(`${port}`);
 
-app.get('/db', (req, res) => {
+app.get('/getdb', (req, res) => {
     res.sendFile(path.join(__dirname + '/src/database/database.json'));
 });
 
+
 app.post('/db',(req, res) => {
     User = req.body.user;
-    AddUser(User);
+    XP = req.body.xp;
+    console.log(XP)
+    AddUser(User, XP);
     res.sendStatus(200);
 });
 
