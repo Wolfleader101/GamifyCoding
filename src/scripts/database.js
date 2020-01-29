@@ -1,5 +1,15 @@
 let User = document.getElementById("UserField").value;
 let FetchFirstUserXP;
+
+// fix issue where new users cant be added
+$.ajax({
+    type: 'POST',
+    url: '/db',
+    data: {
+        user: User,
+        xp: 0
+    },
+})
 // first fetch the database to 
 fetch(
         '/getdb', {
@@ -19,27 +29,29 @@ fetch(
             Post the data to log the users XP
             */
 
+        
+
             let user = [];
             let UserName;
             let UserXP;
             const vals = Object.entries(db);
             for (i in vals) {
+                // fix issue where new users cant be added
+    
                 user.push(Object.values(vals)[i]);
                 UserName = Object.values(user)[i][0];
                 UserXP = Object.values(user)[i][1].XP;
-                console.log(UserName);
-                console.log(UserXP);
-            }
-            console.log(`User: ${UserName} has ${UserXP}xp`)
-
+                console.log(`User: ${UserName} has ${UserXP}xp`)
+                
             $.ajax({
                 type: 'POST',
                 url: '/db',
                 data: {
-                    user: User,
-                    xp: FetchFirstUserXP
+                    user: UserName,
+                    xp: UserXP
                 },
             })
+            }
         } else {
             console.log("Database is empty")
         }
