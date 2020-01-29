@@ -1,6 +1,6 @@
 {
   "name": "gamifycoding",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A fun way to get you motivated to code",
   "main": "app.js",
   "scripts": {

@@ -1,7 +1,7 @@
 let User = document.getElementById("UserField").value;
 let FetchFirstUserXP;
 
-// fix issue where new users cant be added
+// fix issue where new users cant be added. Gives all new users xp of 0
 $.ajax({
     type: 'POST',
     url: '/db',
