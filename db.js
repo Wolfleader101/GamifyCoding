@@ -1,27 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 const DbPath = path.join(__dirname + '/src/database/database.json');
-XP = 0;
 
 module.exports = {
-    AddUser: (user, xp) => {
+    AddUser: (user) => {
         fs.readFile(DbPath, 'utf-8', (err, data) => {
             db = JSON.parse(data);
-            db[user] = {
-                XP: xp,
+            
+            if (db.hasOwnProperty(user) == false) {
+                db[user] = {
+                    XP: 0,
+                }
+                fs.writeFile(DbPath, JSON.stringify(db), (err) => {
+                    // console.log(err)
+                 });
             }
-            fs.writeFile(DbPath, JSON.stringify(db), (err) => {
-               // console.log(err)
-            });
+
         });
     },
-    AddXP: (user, xp) => {
-        XP++;
+    AddXP: (user) => {
         fs.readFile(DbPath, 'utf-8', (err, data) => {
             db = JSON.parse(data);
-            db[user] = {
-                XP: XP,
-            }
+            db[user].XP++;
+            console.log(db)
             fs.writeFile(DbPath, JSON.stringify(db), (err) => {
                // console.log(err)
             });

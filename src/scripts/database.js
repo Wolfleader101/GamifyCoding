@@ -7,7 +7,6 @@ $.ajax({
     url: '/db',
     data: {
         user: User,
-        xp: 0
     },
 })
 // first fetch the database to 

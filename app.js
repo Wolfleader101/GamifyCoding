@@ -18,16 +18,13 @@ app.get('/getdb', (req, res) => {
 
 app.post('/db',(req, res) => {
     User = req.body.user;
-    XP = req.body.xp;
-    console.log(XP)
-    AddUser(User, XP);
+    AddUser(User);
     res.sendStatus(200);
 });
 
 app.post('/xp', (req, res) => {
     User = req.body.user;
-    XP = req.body.xp;
-    AddXP(User, XP)
+    AddXP(User);
     res.sendStatus(200);
 })
 
