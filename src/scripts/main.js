@@ -31,7 +31,7 @@ function stopWatch() {
         if(Number.isInteger(savedUser.XP / 100)) {
            savedUser.Level++
         }
-
+        UpdateUI();
         localStorage.setItem(User, JSON.stringify(savedUser))
 
     }
