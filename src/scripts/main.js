@@ -25,16 +25,12 @@ function stopWatch(){
     seconds++;
 
     //XP Logic
-    if (Number.isInteger(seconds / 15)) {
-        $.ajax({
-            type: 'POST',
-            url: '/xp',
-            data: {
-                user: User,
-            }
-        })
+    if (Number.isInteger(seconds / 15)) { 
 
-        
+       let savedUser = JSON.parse(localStorage.getItem(User));
+       savedUser.XP++;
+       localStorage.setItem(User, JSON.stringify(savedUser))
+         
     }
     
     //Logic to determine when to increment next value

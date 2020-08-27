@@ -1,14 +1,10 @@
 let User = document.getElementById("UserField").value;
-let FetchFirstUserXP;
 
-// fix issue where new users cant be added. Gives all new users xp of 0
-$.ajax({
-    type: 'POST',
-    url: '/db',
-    data: {
-        user: User,
-    },
-})
+// add all users to local storage.
+if(!localStorage.getItem(User))
+   localStorage.setItem(User, `${JSON.stringify({"XP":"0"})}`)
+
+
 // first fetch the database to 
 fetch(
         '/getdb', {

@@ -18,7 +18,6 @@ app.get('/getdb', (req, res) => {
 
 app.post('/db',(req, res) => {
     User = req.body.user;
-    console.log(User)
     AddUser(User);
     res.sendStatus(200);
 });
