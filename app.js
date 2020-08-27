@@ -3,7 +3,6 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = 3402;
-const { AddUser, AddXP } = require('./db');
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
