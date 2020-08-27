@@ -1,8 +1,5 @@
 /* https://github.com/JamieMcGibbon/TechnicalCafe thank you for the timer */
 
-// XP System
-xp = 0;
-
 //Define vars to hold time values
 let seconds = 0;
 let minutes = 0;
@@ -19,26 +16,32 @@ let interval = null;
 //Define var to hold stopwatch status
 let status = "stopped";
 
+
+
 //Stopwatch function (logic to determine when to increment next value, etc.)
-function stopWatch(){
+function stopWatch() {
 
     seconds++;
 
     //XP Logic
-    if (Number.isInteger(seconds / 15)) { 
+    if (Number.isInteger(seconds / 15)) {
 
-       let savedUser = JSON.parse(localStorage.getItem(User));
-       savedUser.XP++;
-       localStorage.setItem(User, JSON.stringify(savedUser))
-         
+        let savedUser = JSON.parse(localStorage.getItem(User));
+        savedUser.XP++;
+        if(Number.isInteger(savedUser.XP / 100)) {
+           savedUser.Level++
+        }
+
+        localStorage.setItem(User, JSON.stringify(savedUser))
+
     }
-    
+
     //Logic to determine when to increment next value
-    if(seconds / 60 === 1){
+    if (seconds / 60 === 1) {
         seconds = 0;
         minutes++;
 
-        if(minutes / 60 === 1){
+        if (minutes / 60 === 1) {
             minutes = 0;
             hours++;
         }
@@ -46,24 +49,21 @@ function stopWatch(){
     }
 
     //If seconds/minutes/hours are only one digit, add a leading 0 to the value
-    if(seconds < 10){
+    if (seconds < 10) {
         displaySeconds = "0" + seconds.toString();
-    }
-    else{
+    } else {
         displaySeconds = seconds;
     }
 
-    if(minutes < 10){
+    if (minutes < 10) {
         displayMinutes = "0" + minutes.toString();
-    }
-    else{
+    } else {
         displayMinutes = minutes;
     }
 
-    if(hours < 10){
+    if (hours < 10) {
         displayHours = "0" + hours.toString();
-    }
-    else{
+    } else {
         displayHours = hours;
     }
 
@@ -74,17 +74,16 @@ function stopWatch(){
 
 
 
-function startStop(){
+function startStop() {
 
-    if(status === "stopped"){
+    if (status === "stopped") {
 
         //Start the stopwatch (by calling the setInterval() function)
         interval = window.setInterval(stopWatch, 1000);
         document.getElementById("startStop").innerHTML = "Stop";
         status = "started";
 
-    }
-    else{
+    } else {
 
         window.clearInterval(interval);
         document.getElementById("startStop").innerHTML = "Start";
@@ -95,7 +94,7 @@ function startStop(){
 }
 
 //Function to reset the stopwatch
-function reset(){
+function reset() {
 
     window.clearInterval(interval);
     seconds = 0;
